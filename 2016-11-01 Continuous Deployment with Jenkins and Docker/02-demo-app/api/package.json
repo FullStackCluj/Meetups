@@ -1,0 +1,23 @@
+{
+  "name": "todo-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Nothing to test\""
+  },
+  "author": "Around25 <office@around25.com>",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "cors": "^2.7.1",
+    "express": "^4.14.0",
+    "jwt-simple": "^0.5.0",
+    "moment": "^2.14.1",
+    "moment-timezone": "^0.5.5",
+    "rethinkdb": "^2.3.2",
+    "thinky": "^2.3.3",
+    "uuid": "^2.0.3"
+  }
+}

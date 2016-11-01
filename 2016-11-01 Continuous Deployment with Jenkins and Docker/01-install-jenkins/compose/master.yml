@@ -1,0 +1,21 @@
+version: '2'
+services:
+  master:
+    image: around25/jenkins-docker-master
+    restart: always
+    ports:
+      - 50000:50000
+    environment:
+      - VIRTUAL_HOST=${MAIN_DOMAIN}
+      - VIRTUAL_PORT=8080
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - data:/var/lib/jenkins
+    networks:
+      default:
+        aliases:
+          - master.jenkins.devops
+
+volumes:
+  data:
+    driver: local

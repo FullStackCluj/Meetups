@@ -1,0 +1,5 @@
+.idea/
+.git/
+Jenkinsfile
+devops/
+node_modules/

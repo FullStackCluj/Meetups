@@ -1,0 +1,14 @@
+version: '2'
+services:
+  slave:
+    image: around25/jenkins-docker-slave
+    restart: always
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      - JENKINS_MASTER_PASSWORD=${JENKINS_MASTER_PASSWORD}
+      - COMMAND_OPTIONS=-master ${JENKINS_MASTER_HOST} -name ${JENKINS_MASTER_USERNAME} -username slave -passwordEnvVariable JENKINS_MASTER_PASSWORD
+    networks:
+      default:
+        aliases:
+          - slave.jenkins.devops

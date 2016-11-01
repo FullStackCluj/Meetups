@@ -1,0 +1,23 @@
+
+.error {
+  display: inline-block;
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  visibility:hidden;
+  opacity:0;
+//  transition:visibility 0s linear 0.5s,opacity 0.5s linear;
+
+  span{
+    padding-top: 2px;
+    float: right;
+    cursor: hand;
+  }
+}
+
+.fadeIn{
+  visibility:visible;
+  opacity:1;
+  transition-delay:1s;
+}
+

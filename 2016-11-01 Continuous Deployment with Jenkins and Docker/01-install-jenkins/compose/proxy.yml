@@ -1,0 +1,14 @@
+version: '2'
+services:
+  domainproxy:
+    image: jwilder/nginx-proxy:latest
+    restart: always
+    ports:
+      - "80:80"
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+
+# networks:
+#   proxy:
+#     external:
+#       name: nginx-proxy # created by the start.sh script

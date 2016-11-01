@@ -1,0 +1,44 @@
+@import "src/styles/colors.scss";
+
+@font-face {
+  font-family: "Noto Sans";
+  src: url('../assets/fonts/NotoSans-Regular.ttf');
+}
+
+@font-face {
+  font-family: "Noto Sans";
+  src: url('../assets/fonts/NotoSans-Bold.ttf');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Noto Sans";
+  src: url('../assets/fonts/NotoSans-Italic.ttf');
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Noto Sans";
+  src: url('../assets/fonts/NotoSans-BoldItalic.ttf');
+  font-weight: bold;
+  font-style: italic;
+}
+
+body {
+  font-family: "Noto Sans", "Arial", sans-serif;
+  font-size: 14px;
+  color: rgb(77,77,77);
+
+  h1{
+    color: $primary-color
+  }
+
+  table{
+    margin-top: 20px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}

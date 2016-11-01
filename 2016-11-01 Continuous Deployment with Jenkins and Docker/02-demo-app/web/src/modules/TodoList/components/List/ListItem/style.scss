@@ -1,0 +1,51 @@
+@import "src/styles/colors.scss";
+
+.base{
+  border-bottom: 1px solid #f4f4f4;;
+  padding: 30px 20px 30px 20px;
+  cursor: pointer;
+
+  &:hover{
+    background-color: #fcfcfc;
+    .link{
+      opacity: 1;
+    }
+  }
+
+  .logo{
+    width: 50px;
+    border-radius: 50%;
+  }
+
+  .name{
+    text-align: left;
+    font-size: 22px;
+  }
+
+  .address{
+    text-align: left;
+    color: $secondary-text-color;
+  }
+
+  .service{
+    text-align: right;
+    color: $secondary-text-color;
+    margin-bottom: 5px;
+
+    .serviceName{
+
+    }
+    .servicePrice{
+
+    }
+  }
+
+  .link{
+    opacity: 0;
+    text-align: right;
+    a {
+      color: $link-color;
+    }
+  }
+
+}

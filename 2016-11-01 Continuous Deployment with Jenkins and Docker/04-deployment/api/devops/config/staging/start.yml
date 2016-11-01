@@ -1,0 +1,25 @@
+version: '2'
+services:
+  api:
+    image: cosminharangus/fullstack-api:${TAG}
+    restart: always
+    environment:
+      - LOGGER_LEVEL=trace
+      - DB_HOST=rethinkdb.fullstackcluj
+      - DB_NAME=todoapp_staging
+      - APP_ENV=${DEPLOY_ENV}
+      - NODE_ENV=production
+    networks:
+      proxy:
+        aliases:
+          - api.fullstackcluj
+      default:
+        aliases:
+          - api.fullstackcluj
+
+networks:
+  default:
+    driver: bridge
+  proxy:
+    external:
+      name: nginx-proxy

@@ -1,0 +1,16 @@
+.base{
+  input{
+    border-right: none;
+    &:focus{
+      border-color: #CCCCCC;
+    }
+  }
+  .inputAddon{
+    background-color: transparent;
+    border-radius: 0;
+    border-left: none;
+    .inputAddonContent{
+      opacity: .3;
+    }
+  }
+}

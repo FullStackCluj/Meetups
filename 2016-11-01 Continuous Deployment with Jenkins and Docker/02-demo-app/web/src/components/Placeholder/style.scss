@@ -1,0 +1,23 @@
+@import "src/styles/colors.scss";
+
+.base{
+  padding: 30px;
+  height: 400px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  flex-direction: column;
+
+  .title{
+    margin-bottom: 6px;
+  }
+
+  .text{
+    font-size: 14px;
+  }
+
+  .img{
+    margin: 40px auto;
+    width: 250px;
+  }
+}

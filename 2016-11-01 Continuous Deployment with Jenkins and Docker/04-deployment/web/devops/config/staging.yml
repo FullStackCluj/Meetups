@@ -1,0 +1,12 @@
+version: '2'
+services:
+  website:
+    image: cosminharangus/fullstack-web:${TAG}
+    restart: always
+    environment:
+      APP_ENV: ${DEPLOY_ENV}
+      PORT: 80
+    networks:
+      default:
+        aliases:
+          - www.fullstackcluj

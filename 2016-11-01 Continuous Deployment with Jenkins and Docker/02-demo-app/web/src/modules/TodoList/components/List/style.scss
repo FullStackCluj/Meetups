@@ -1,0 +1,16 @@
+@import "src/styles/colors.scss";
+
+.base{
+  margin-bottom: 50px;
+  h1{
+    font-size: 30px;
+  }
+
+  .list{
+    margin-top: 30px;
+  }
+
+  .subtitle{
+    color: $text-color;
+  }
+}

@@ -1,0 +1,37 @@
+version: '2'
+
+services:
+  proxy:
+    image: cosminharangus/fullstack-proxy:${TAG}
+    restart: always
+    environment:
+      - VIRTUAL_HOST=fullstackcluj.ro
+      - HTTPS_METHOD=noredirect
+    networks:
+      proxy:
+        aliases:
+          - proxy.fullstackcluj
+      default:
+        aliases:
+          - proxy.fullstackcluj
+
+  rethinkdb:
+    image: rethinkdb
+    restart: always
+    networks:
+      default:
+        aliases:
+          - rethinkdb.fullstackcluj
+    volumes:
+      - database:/data
+
+volumes:
+  database:
+    driver: local
+
+networks:
+  default:
+    driver: bridge
+  proxy:
+    external:
+      name: nginx-proxy
