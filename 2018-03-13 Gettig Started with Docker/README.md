@@ -90,3 +90,4 @@ Compose is a tool for defining and running multi-container Docker applications. 
 * `docker stop <container>` stop a running container
 * `docker restart <container>` restart a running container
 
+![Demo Time](http://a.memegen.com/g7x44i.gif)
