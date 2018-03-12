@@ -1,0 +1,58 @@
+version: '3'
+services:
+  proxy:
+    image: traefik
+    restart: always
+    command: --web --docker --docker.domain="demo.local" --logLevel=DEBUG
+    ports:
+      - 80:80
+      - 8080:8080
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /dev/null:/traefik.toml
+
+  database:
+    image: mysql
+    restart: always
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_DATABASE: demo
+      MYSQL_USER: demo
+      MYSQL_PASSWORD: demo
+    volumes:
+      - mysql:/var/lib/mysql
+  api:
+    build:
+      context: ./api
+    image: fullstack/todos/api:latest
+    environment:
+      MYSQL_DATABASE: demo
+      MYSQL_USER: demo
+      MYSQL_PASSWORD: demo
+      MYSQL_HOST: database
+      TOKEN_SECRET: <very-secret-token>
+    depends_on:
+      - database
+    labels:
+      - "traefik.backend=api"
+      - "traefik.enable=true"
+      - "traefik.port=80"
+      - "traefik.frontend.rule=Host:demo.local;PathPrefixStrip:/api"
+  web:
+    build:
+      context: ./web
+    image: fullstack/todos/web:latest
+    environment:
+      TOKEN_SECRET: <very-secret-token>
+      API_HOST: http://demo.local/api
+    depends_on:
+      - api
+    labels:
+      - "traefik.backend=web"
+      - "traefik.enable=true"
+      - "traefik.port=80"
+      - "traefik.frontend.rule=Host:demo.local;PathPrefixStrip:/"
+volumes:
+  mysql:
