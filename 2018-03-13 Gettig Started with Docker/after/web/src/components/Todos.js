@@ -63,6 +63,12 @@ export default class Todos extends Component {
         .then();
     }
     if (data.body.success) {
+      this.setState({current: {
+        id: '',
+        task: '',
+        done: false,
+        user_id: ''
+      }});
       await this.getTodos();
     }
   }

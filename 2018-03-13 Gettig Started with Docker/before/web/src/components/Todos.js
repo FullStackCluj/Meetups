@@ -81,6 +81,12 @@ export default class Todos extends Component {
       .send(todo)
       .then();
     if (data.body.success) {
+      this.setState({current: {
+        id: '',
+        task: '',
+        done: false,
+        user_id: ''
+      }});
       await this.getTodos();
     }
   }
