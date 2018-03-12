@@ -1,0 +1,36 @@
+{
+  "name": "demo-api",
+  "version": "1.0.0",
+  "description": "Demo Api",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "start:dev": "nodemon index.js",
+    "start:migrate": "npm run -s migrate && node index.js",
+    "migrate": "sequelize db:migrate --env database --config ./src/config/index.js",
+    "test": "jest ./test",
+    "lint": "eslint -c .eslintrc.json ./src ./test --fix"
+  },
+  "author": "Darius Cupsa <cupsadarius@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "bunyan": "^1.8.12",
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "jwt-simple": "^0.5.1",
+    "moment": "^2.21.0",
+    "mysql2": "^1.5.2",
+    "node_hash": "^0.2.0",
+    "pg": "^7.4.1",
+    "sequelize": "^4.36.0",
+    "sequelize-cli": "^4.0.0",
+    "uuid": "^3.2.1"
+  },
+  "devDependencies": {
+    "eslint": "^4.18.2",
+    "jest": "^22.4.2",
+    "nodemon": "^1.17.1",
+    "supertest": "^3.0.0"
+  }
+}
