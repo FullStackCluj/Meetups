@@ -42,6 +42,7 @@ export default class Login extends Component {
         localStorage.setItem('Auth', JSON.stringify({token, user}));
 
         this.setState({success: true});
+        window.location.href = '/';
       }
       } catch(error) {
       this.setState({error: true});
@@ -79,7 +80,6 @@ export default class Login extends Component {
             </div>
             <button type="button" className="btn btn-primary col-md-12" onClick={this.handleSubmit}>Login</button>
           </form>
-          {this.state.success && <h5 style={{color: '#00ff00'}}><a href="/">Go to ToDo's</a></h5>}
           {this.state.error && <h5 style={{color: '#ff0000'}}>Something wrong happened.</h5>}
         </div>
       </div>

@@ -38,6 +38,7 @@ export default class Register extends Component {
         .then();
       if (data.status === 201) {
         this.setState({success: true});
+        window.location.href = '/login';
       }
       } catch(error) {
       this.setState({error: true});
@@ -110,7 +111,6 @@ export default class Register extends Component {
             </div>
             <button type="button" className="btn btn-primary col-md-12" onClick={this.handleSubmit}>Register</button>
           </form>
-          {this.state.success && <h5 style={{color: '#00ff00'}}>User registered.  <a href="/login">Login</a></h5>}
           {this.state.error && <h5 style={{color: '#ff0000'}}>Something wrong happened.</h5>}
         </div>
       </div>
