@@ -92,7 +92,7 @@ npm install -g nodebot-workshop
 
 # 4. Prepare Arduino board ( if you have one )
 
-- Download [Arduino IDE][df2]
+- Download [Arduino IDE][df3]
 - Connect the board ( Arduino IDE should recognize the board automatically )
 - Upload StandardFirmata ( File -> Examples -> Firmata -> StandardFirmata )
 
